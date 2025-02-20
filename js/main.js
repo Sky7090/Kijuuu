@@ -9,37 +9,25 @@ document.querySelectorAll('nav a').forEach(anchor => {
         });
     });
 });
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
 
-        // Ambil ID target dari href (contoh: #Home)
-        const targetID = this.getAttribute("href").substring(1);
-        
-        // Cari elemen target sesuai ID
-        const targetElement = document.getElementById(targetID);
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".hamburger");
+    const menu = document.querySelector(".menu");
+    const menuLinks = document.querySelectorAll(".menu ul li a");
 
-        // Scroll ke target element dengan offset
-        window.scrollTo({
-            top: targetElement.offsetTop - document.querySelector("nav").offsetHeight, // offset untuk navbar
-            behavior: "smooth"
+    // Toggle menu saat tombol hamburger ditekan
+    hamburger.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+
+    // Tutup menu saat salah satu link diklik
+    menuLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            menu.classList.remove("active");
         });
     });
 });
 
-// Hamburger menu toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.menu');
-
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-// Scroll to top button
-const backToTopBtn = document.createElement('button');
-backToTopBtn.innerText = '↑';
-backToTopBtn.classList.add('back-to-top');
-document.body.appendChild(backToTopBtn);
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 200) {
