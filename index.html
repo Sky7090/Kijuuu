@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBSITE PORTFOLIO</title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+    
+                const targetID = this.getAttribute("href").substring(1);
+                const targetElement = document.getElementById(targetID);
+    
+                window.scrollTo({
+                    top: targetElement.offsetTop - document.querySelector("nav").offsetHeight,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+    </body>
+    </html>
+    
+    <!-- MENU -->
+    <nav>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="Images/WhatsApp Image 2025-02-16 at 16.16.35.jpeg" alt="Logo">
+                <div class="hamburger">
+                    <span>&#9776;</span> <!-- Hamburger Icon -->
+                </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#about-me">About me</a></li>
+                    <li><a href="#timeline">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav> 
+
+    <!-- HERO / BACKGROUND -->
+    <header id="Home">
+        <div class="header-opacity"></div>
+        <div class="header-jumbotron">
+            <h4>WELCOME TO MY PORTFOLIO WEBSITE</h4>
+            <h5>
+                <span>Every number holds meaning. Every pattern tells a story. I don't just process data, I seek the truth behind it.</span>
+            </h5>
+            <h6>With a combination of in-depth analysis, meaningful visualizations, and data-driven strategies, I am committed to transforming information into smarter decisions and a more efficient future.</h6>
+            <a href="#" class="button button-xl">Welcome to My Journey</a>
+        </div>
+    </header>
+    
+
+    <!-- About Me Section -->
+    <section id="about-me">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="Images/WhatsApp Image 2025-02-14 at 23.29.12 (1).jpeg" alt="Profile Picture">
+            </div>
+            <div class="about-text">
+                <h9>About Me</h9>
+                <p>I am a Data Processor with 2 years and 6 months of experience in the mining industry, specializing in data processing, performance analysis, and strategic reporting. With expertise in Python, SQL, Tableau, and Power BI, I focus on data validation, cost analysis, and report optimization to improve business efficiency.</p>
+                <p>I am currently honing my skills through studies at RevoU, with the goal of transitioning into a Data Analyst role. I believe that data is not just numbers but a powerful tool that drives better decision-making and sustainable business growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline">
+        <div class="timeline-row">
+            <!-- Education Column -->
+            <div class="timeline-column">
+                <h2 class="title">Education</h2>
+                <div class="timeline-box">
+                    <div class="timeline-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> Sept 2024 - Jan 2026</div>
+                            <h6>RevoU (Full Stack Data Analyst)</h6>
+                            <p>Comprehensive training in SQL, Python, data visualization, A/B testing, and storytelling for data-driven decision-making.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2018 - 2022</div>
+                            <h6>SMKN 2 Depok Sleman (Mining Geology Major)</h6>
+                            <p>Specialized in mining geology, geological mapping, mineral exploration, and reserve estimation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Experience Column -->
+            <div class="timeline-column">
+                <h2 class="title">Work Experience</h2>
+                <div class="timeline-box">
+                    <div class="timeline-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> Sept 2022 - Present</div>
+                            <h6>Data Processor - PT. Riung Mitra Lestari</h6>
+                            <p>Developed optimized reports, automated performance and cost analysis, and validated large datasets for better decision-making.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> Aug 2021 - May 2022</div>
+                            <h6>Mine Project Intern - PT. Usaha Baratama Jayaperkasa</h6>
+                            <p>Performed coal reserve estimations, cost analysis modeling, and project monitoring through data insights.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-container">
+                <!-- Technical Skills -->
+                <div class="skills-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skills-list">
+                        <div class="skill">
+                            <img src="Images/icons8-data-analysis-48.png" alt="Data Analysis" />
+                            <p>Data Analysis</p>
+                        </div>
+                        <div class="skill">
+                            <img src="Images/icons8-financial-analytics-48.png" alt="Finance & Cost Estimation" />
+                            <p>Finance & Cost Estimation</p>
+                        </div>
+                        <div class="skill">
+                            <img src="Images/icons8-quality-control-48.png" alt="Manufacturing & Quality Control" />
+                            <p>Manufacturing & Quality Control</p>
+                        </div>
+                        <div class="skill">
+                            <img src="Images/icons8-budgeting-48.png" alt="Integrated Budgeting System" />
+                            <p>Integrated Budgeting System</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software Skills -->
+                <div class="skills-category">
+                    <h3>Software</h3>
+                    <div class="skills-list">
+                        <div class="skill">
+                            <img src="Images/icons8-python-48.png" alt="Python" />
+                            <p>Python</p>
+                        </div>
+                        <div class="skill">
+                            <img src="Images/icons8-mysql-logo-48.png" alt="SQL" />
+                            <p>SQL</p>
+                        </div>
+                        <div class="skill">
+                            <img src="Images/icons8-tableau-software-48.png" alt="Tableau" />
+                            <p>Tableau</p>
+                        </div>
+                        <div class="skill">
+                            <img src="Images/icons8-power-bi-48.png" alt="Power BI" />
+                            <p>Power BI</p>
+                        </div>
+                        <div class="skill">
+                            <img src="Images/Microsoft_Excel-Logo.wine.png" alt="Excel" />
+                            <p>Excel</p>
+                        </div>
+                        <div class="skill">
+                            <img src="Images/icons8-sap-48.png" alt="SAP" />
+                            <p>SAP</p>
+                        </div>
+                        <div class="skill">
+                            <img src="Images/icons8-microsoft-office-2019-48.png" alt="Microsoft Office" />
+                            <p>Microsoft Office</p>
+                        </div>
+                        <div class="skill">
+                            <img src="Images/icons8-html-48.png" alt="HTML" />
+                            <p>HTML</p>
+                        </div>
+                        <div class="skill">
+                            <img src="Images/icons8-css-logo-48.png" alt="CSS" />
+                            <p>CSS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="skills-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skills-list">
+                        <div class="skill">
+                            <img src="Images/icons8-analytical-thinking-48.png" alt="Analytical Thinking" />
+                            <p>Analytical Thinking</p>
+                        </div>
+                        <div class="skill">
+                            <img src="Images/icons8-problem-solving-48.png" alt="Problem-Solving" />
+                            <p>Problem-Solving</p>
+                        </div>
+                        <div class="skill">
+                            <img src="Images/icons8-presentation-48.png" alt="Communication & Collaboration" />
+                            <p>Communication & Collaboration</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-container">
+            <div class="project">
+                <img src="Images/project1.jpg" alt="Project 1" />
+                <h3>Data Visualization Dashboard</h3>
+                <p>Created an interactive dashboard using Power BI to track company performance and financial metrics.</p>
+            </div>
+            <div class="project">
+                <img src="Images/project2.jpg" alt="Project 2" />
+                <h3>Customer Segmentation Analysis</h3>
+                <p>Performed customer segmentation using Python and SQL to improve targeted marketing strategies.</p>
+            </div>
+            <div class="project">
+                <img src="Images/project3.jpg" alt="Project 3" />
+                <h3>Sales Forecasting Model</h3>
+                <p>Developed a machine learning model to predict future sales trends using historical data.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <h2 class="section-title">My Certificates</h2>
+        <div class="certificates-container">
+            <div class="certificate">
+                <img src="Images/icons8-mysql-logo-48.png" />
+                <div class="certificate-info">
+                    <h3>Data Science Professional Certificate</h3>
+                    <p>Earned a professional certificate in Data Science covering Python, SQL, and Machine Learning.</p>
+                </div>
+            </div>
+            <div class="certificate">
+                <img src="Images/icons8-microsoft-office-2019-48.png" />
+                <div class="certificate-info">
+                    <h3>Business Analytics Specialization</h3>
+                    <p>Completed a Business Analytics program focusing on data-driven decision-making.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer">
+        <div class="footer-container">
+            <h2>Let's Connect!</h2>
+            <p>Feel free to reach out and let's collaborate to create something amazing.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-link">
+                    <img src="Images/icons8-linkedin-48.png" alt="LinkedIn">
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://wa.me/yourwhatsappnumber" target="_blank" class="social-link">
+                    <img src="Images/icons8-whatsapp-48.png" alt="WhatsApp">
+                    <span>WhatsApp</span>
+                </a>
+                <a href="mailto:yourmail@gmail.com" class="social-link">
+                    <img src="Images/icons8-gmail-48.png" alt="Gmail">
+                    <span>Gmail</span>
+                </a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-link">
+                    <img src="Images/icons8-instagram-48.png" alt="Instagram">
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
