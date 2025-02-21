@@ -8,24 +8,15 @@ html, body {
     font-family: "Roboto Condensed", sans-serif;
     background: #1f242d;
     color: #ededed;
-}
-
+/* Wrapper */
 /* Wrapper */
 .wrapper {
     max-width: 90%;
     margin: auto;
     padding: 10px 20px;
-    
 }
 
-/* Responsive wrapper */
-@media (max-width: 768px) {
-    .wrapper {
-        padding: 10px;
-    }
-}
-
-/* MENU */
+/* Navbar */
 nav {
     background-color: #000;
     position: sticky;
@@ -35,31 +26,32 @@ nav {
     padding: 10px 0;
 }
 
+/* Navbar content */
 nav > .wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.6rem; /* Ukuran font lebih kecil */
-    
+    font-size: 1.4rem;
 }
 
+/* Logo */
 .logo {
     display: flex;
     align-items: center;
-    gap: 100px;
+    gap: 20px;
 }
 
 .logo > img {
-    height: 80px; /* Ukuran logo lebih kecil */
-    gap: 4;
+    height: 60px;
 }
 
 /* Menu */
 .menu {
     display: flex;
-    flex-grow: 2;
-    justify-content: space-evenly;
-    
+    flex-grow: 1;
+    justify-content: space-between; /* Agar menu menyebar dengan rapi */
+    width: 100%;
+    max-width: 1000px; /* Memberikan batas agar tidak terlalu jauh menyebar */
 }
 
 .menu > ul {
@@ -67,29 +59,78 @@ nav > .wrapper {
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 50px;
+    gap: 40px; /* Memberikan ruang antar menu agar lebih menyebar */
 }
 
 .menu > ul > li > a {
     text-decoration: none;
     color: #F7F7F7;
-    padding: 8px 12px; /* Padding lebih kecil */
+    padding: 10px 15px;
+    font-size: 1.6rem; /* Font lebih besar di laptop */
 }
 
 /* Hamburger Menu */
 .hamburger {
     display: none;
     cursor: pointer;
-    font-size: 28px; /* Ukuran lebih pas */
+    font-size: 28px;
     color: white;
 }
 
-/* Responsive Navbar */
+/* RESPONSIVE */
+
+/* Laptop besar (1200px ke atas) */
+@media (min-width: 1200px) {
+    .menu {
+        max-width: 1100px; /* Lebih menyebar */
+    }
+
+    .menu > ul {
+        gap: 50px; /* Lebih longgar di layar besar */
+    }
+
+    .menu > ul > li > a {
+        font-size: 1.7rem; /* Sedikit lebih besar agar lebih enak dibaca */
+    }
+}
+
+/* Laptop standar (1024px - 1200px) */
+@media (max-width: 1200px) {
+    .menu {
+        max-width: 900px;
+    }
+
+    .menu > ul {
+        gap: 35px;
+    }
+
+    .menu > ul > li > a {
+        font-size: 1.5rem;
+    }
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .menu {
+        max-width: 700px;
+    }
+
+    .menu > ul {
+        gap: 25px;
+    }
+
+    .menu > ul > li > a {
+        font-size: 1.4rem;
+    }
+}
+
+/* Tablet & HP (768px ke bawah) */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
         position: absolute;
         right: 20px;
+        top: 15px;
     }
 
     .menu {
@@ -97,21 +138,21 @@ nav > .wrapper {
         position: absolute;
         top: 70px;
         right: 0;
-        width: 80%;
-        background-color: #000;
+        width: 90%;
+        background-color: rgba(0, 0, 0, 0.9);
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 10px 0;
+        padding: 15px 0;
         border-radius: 8px;
     }
 
     .menu.active {
         display: flex;
+        animation: fadeIn 0.3s ease-in-out;
     }
 
     .menu > ul {
-        display: flex;
         flex-direction: column;
         width: 100%;
         padding: 0;
@@ -119,205 +160,254 @@ nav > .wrapper {
 
     .menu > ul > li {
         width: 100%;
-        padding: 8px 0;
+        padding: 10px 0;
     }
 
     .menu > ul > li > a {
         display: block;
         width: 100%;
-        padding: 10px;
-        font-size: 1.2rem; /* Ukuran font lebih kecil */
+        padding: 12px;
+        font-size: 1.2rem;
     }
 }
 
-/** HERO / BACKGROUND */
-/* Typing Effect */
-@keyframes typing {
-    0% {
-        width: 0;
+/* HP kecil (480px - 320px) */
+@media (max-width: 480px) {
+    .menu {
+        width: 95%;
     }
-    100% {
+
+    .menu > ul > li > a {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .logo > img {
+        height: 50px;
+    }
+
+    .hamburger {
+        font-size: 24px;
+    }
+}
+
+/* HP terkecil (320px) */
+@media (max-width: 320px) {
+    .menu {
         width: 100%;
     }
-}
 
-@keyframes blink {
-    50% {
-        border-color: transparent;
+    .menu > ul > li > a {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .logo > img {
+        height: 45px;
+    }
+
+    .hamburger {
+        font-size: 22px;
     }
 }
 
-/* Header */
+
+
+/* Animasi transisi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Animasi Fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+}
+
+/* Background Image */
 header {
     background: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
     height: 100vh;
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
 }
 
-/* Opacity Layer */
-.header-opacity {
-    background-color: #1a1818;
-    width: 100%;
-    height: 100%;
-    opacity: 0.3;
-    position: absolute;
-}
+
 
 /* Header Content */
 .header-jumbotron {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
-    width: 90%;
-    max-width: 1200px;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
-/* Header Text Styling */
-.header-jumbotron > h4 {
+/* Header Text */
+.header-jumbotron h4 {
     color: #F7F7F7;
-    font-size: 2.5rem; /* Lebih kecil agar tidak terpotong */
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
     font-weight: 700;
-    margin-bottom: 15px;
-    padding: 0;
     letter-spacing: 0.6px;
+    margin-bottom: 10px;
 }
 
-/* Typing effect */
-.header-jumbotron > h5 {
-    color: #497D74;
+/* Typing Effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.header-jumbotron h5 {
+    color: #9afded;
     font-family: "Roboto Slab", serif;
     font-weight: 500;
-    margin: 0;
-    padding: 1px;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    max-width: 80%; /* Pastikan teks tidak melebar terlalu jauh */
     text-align: center;
-    max-width: 100%; /* Agar tidak melebihi layar */
-    font-size: 1.5rem; /* Ukuran lebih kecil */
-    display: inline-block;
+    white-space: nowrap; /* Efek mengetik tetap rapi */
     overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid #497D74;
-    width: 0;
-    animation: typing 6s steps(40) 1s 1 normal both, blink 1s step-end infinite;
+    display: inline-block;
+    border-right: 3px solid #9afded;
+    animation: typing 4s steps(30, end) 1s forwards, blink 1s step-end infinite;
 }
 
 /* Subtext */
-.header-jumbotron > h6 {
+.header-jumbotron h6 {
     color: white;
     font-family: "Roboto Slab", serif;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     font-weight: 300;
-    margin-top: 10px;
-    max-width: 90%;
-    text-align: center;
+    max-width: 85%;
     line-height: 1.6;
-    padding: 0 10px;
-}
-
-.header-jumbotron > p {
-    padding: 5px;
-    margin: 0 5px;
-    color: #D9D9D9;
-}
-
-/* Button styling */
-.button {
-    background-color: aqua;
-    padding: 20px 30px; /* Lebih kecil di layar kecil */
-    border-radius: 4px;
-    font-family: "Roboto Condensed", sans-serif;
-    font-size: 18px;
-    font-weight: 800;
     margin-top: 10px;
 }
 
-.button-xl {
-    font-size: 1.3rem;
-    padding: 5px;
+/* Button Styling */
+.button {
+    background-color: #00e6e6;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.4);
+}
+
+.button:hover {
+    background-color: #00cccc;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 255, 255, 0);
 }
 
 /* Responsiveness */
 @media (max-width: 768px) {
     .header-jumbotron {
-        top: 35%; /* Lebih ke atas */
-        transform: translate(-50%, -40%);
+        padding: 10px;
     }
-    .header-jumbotron > h4 {
-        font-size: 2rem; /* Ukuran lebih kecil */
+    .header-jumbotron h4 {
+        font-size: 2rem;
     }
-
-    .header-jumbotron > h5 {
-        font-size: 1.2rem;
-        border-right: 2px solid #9afded;
+    .header-jumbotron h5 {
+        font-size: 1.1rem; /* Ukuran lebih kecil agar muat */
+        max-width: 95%;
+        white-space: nowrap; /* Pastikan tetap efek mengetik */
+        border-right: 2px solid #9afded; /* Border lebih tipis */
+        animation: typing 3s steps(20, end) 0.5s forwards, blink 1s step-end infinite; /* Lebih cepat */
     }
-
-    .header-jumbotron > h6 {
+    @media (max-width: 768px) {
+        .header-jumbotron h5 {
+            font-size: 1.1rem;
+            max-width: 90%; /* Lebih lebar di HP */
+            white-space: normal; /* Izinkan teks turun ke baris baru */
+            display: block; /* Pastikan teks fleksibel */
+            border-right: 2px solid #9afded;
+            animation: typing 3s steps(25, end) 0.5s forwards, blink 1s step-end infinite;
+        }
+    }
+    
+    /* Responsiveness untuk HP kecil (Lebih kecil dari 480px) */
+    @media (max-width: 480px) {
+        .header-jumbotron h5 {
+            font-size: 1rem;
+            max-width: 95%;
+            white-space: normal; /* Pastikan teks tidak terpotong */
+            border-right: 1.5px solid #9afded;
+            animation: typing 2.5s steps(20, end) 0.3s forwards, blink 1s step-end infinite;
+        }
+    }
+    .header-jumbotron h6 {
         font-size: 1rem;
-        max-width: 85%;
+        max-width: 90%;
     }
-
     .button {
-        font-size: 16px;
-        padding: 15px 25px;
+        font-size: 1rem;
+        padding: 12px 20px;
     }
 }
+
 
 /* About Me Section */
-#about-me {
-    background-image: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 100px;
-    text-align: center;
-    color: #ededed;
-    margin-top: 0px;
-    background: linear-gradient(to right, rgba(31, 36, 45, 0.2), rgba(46, 53, 71, 0.2)), url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
 #about-me {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 80vh;
-    padding: 50px 10%;
+    padding: 80px 10%;
+    background: linear-gradient(to right, rgba(31, 36, 45, 0.8), rgba(46, 53, 71, 0.8)), url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #ededed;
 }
 
-/* Box around content */
+/* Container for About Section */
 .about-container {
     display: flex;
     align-items: center;
-    max-width: 900px;
-    width: 100%; /* Adjusted width */
+    justify-content: space-between;
+    max-width: 1100px;
+    width: 100%;
     gap: 40px;
-    padding: 30px; /* Padding inside the box */
-    background: rgba(0, 0, 0, 0.5); /* Background of the box */
-    border-radius: 15px; /* Rounded corners */
-    border: 2px solid #0ef; /* Border color */
-    box-shadow: 0 4px 10px rgba(0, 238, 255, 0.4); /* Box shadow */
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    border: 2px solid #0ef;
+    box-shadow: 0 4px 15px rgba(0, 238, 255, 0.4);
 }
 
+/* Image Styling */
 .about-image img {
-    width: 400px;
-    height: 400px;
-    border-radius: 60%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
     object-fit: cover;
     border: 5px solid #0ef;
     padding: 5px;
     background: linear-gradient(45deg, #0ef, #1f242d);
     box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
 .about-image img:hover {
@@ -325,12 +415,15 @@ header {
     box-shadow: 0 6px 12px rgba(0, 238, 255, 0.5);
 }
 
+/* About Text Styling */
 .about-text {
     flex: 1;
+    text-align: left;
+    max-width: 600px;
 }
 
-.about-text h9 {
-    font-size: 30px;
+.about-text h2 {
+    font-size: 32px;
     font-weight: 800;
     color: #0ef;
     margin-bottom: 12px;
@@ -340,174 +433,215 @@ header {
 }
 
 .about-text p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     color: whitesmoke;
     margin-bottom: 12px;
 }
 
-/* Responsif untuk layar kecil */
-@media (max-width: 768px) {
+/* Responsiveness */
+@media (max-width: 1200px) {
+    #about-me {
+        padding: 60px 8%;
+    }
+    .about-container {
+        max-width: 900px;
+        padding: 30px;
+    }
+    .about-text h2 {
+        font-size: 28px;
+    }
+    .about-text p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1024px) {
     .about-container {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
     }
+    .about-image img {
+        width: 250px;
+        height: 250px;
+    }
+    .about-text {
+        max-width: 100%;
+        text-align: center;
+    }
+}
 
+@media (max-width: 768px) {
+    #about-me {
+        padding: 50px 5%;
+    }
+    .about-container {
+        padding: 25px;
+    }
+    .about-image img {
+        width: 200px;
+        height: 200px;
+    }
+    .about-text h2 {
+        font-size: 24px;
+    }
+    .about-text p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #about-me {
+        padding: 40px 5%;
+    }
+    .about-container {
+        padding: 20px;
+    }
     .about-image img {
         width: 150px;
         height: 150px;
     }
+    .about-text h2 {
+        font-size: 22px;
+    }
+    .about-text p {
+        font-size: 14px;
+    }
 }
 
+@media (max-width: 320px) {
+    .about-image img {
+        width: 120px;
+        height: 120px;
+    }
+    .about-text h2 {
+        font-size: 20px;
+    }
+    .about-text p {
+        font-size: 13px;
+    }
+}
 
 /* Timeline Section */
 
+/* General Styling for Timeline Section */
 #timeline {
     background-image: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding: 100px;
-}
-
-#timeline {
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding: 50px 8%;
-}
-
-/* Timeline Row */
-#timeline .timeline-row {
+    padding: 80px 5%;
     display: flex;
-    column-gap: 80px;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #ededed;
 }
 
-/* Timeline Column */
-.timeline-row .timeline-column {
-    flex: 1 1 400px;
-    margin-bottom: 30px;
+/* Timeline Layout */
+.timeline-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 50px;
+    max-width: 1200px;
+    width: 100%;
 }
 
-/* Title Styling */
-.timeline-column .title {
-    font-size: 22px;
+
+
+.timeline-column:hover {
+    transform: translateY(-5px);
+}
+
+.title {
+    font-size: 24px;
     font-weight: 700;
-    margin: 16px 0 20px 20px;
-    color: #fff;
+    color: #0ef;
     border-bottom: 3px solid #0ef;
     padding-bottom: 8px;
+    margin-bottom: 20px;
     display: inline-block;
 }
 
-/* Timeline Content Box */
-.timeline-box {
-    position: relative;
-    padding-left: 20px;
-    border-left: 3px solid #0ef;
-}
-
 /* Timeline Content */
-.timeline-content {
-    position: relative;
-    margin-bottom: 40px;
-}
-
-/* Titik (Point) sejajar dengan garis */
-.timeline-content::before {
-    content: '';
-    position: absolute;
-    top: 90px;
-    left: -35px;
-    width: 20px;
-    height: 20px;
-    background: #0ef;
-    border-radius: 50%;
-    border: 3px solid #1f242d;
-}
-
-/* Content Box dengan transparansi dan ukuran seragam */
-.timeline-content .content {
-    padding: 20px;
-    border: 2px solid #0ef; /* Border berwarna */
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.5); /* Background of the box */; /* Background transparan dengan warna */
-    min-width: 350px;
-    max-width: 400px;
-    height: 300px; /* Menentukan tinggi seragam untuk kotak */
+.timeline-box {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Membuat konten merata di dalam box */
-    transition: 0.3s ease-in-out;
+    gap: 20px;
 }
 
-/* Hover Effect */
-.timeline-content .content:hover {
-    transform: scale(1.03);
-    background-color: rgba(53, 66, 89, 0.8); /* Hover background sedikit lebih gelap */
+.timeline-content {
+    background: rgba(20, 20, 20, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #0ef;
+    box-shadow: inset 0 0 10px rgba(0, 238, 255, 0.3);
+    transition: 0.3s;
 }
 
-/* Year */
-.timeline-content .content .year {
+.timeline-content:hover {
+    background: rgba(53, 66, 89, 0.9);
+}
+
+.year {
     font-size: 18px;
     font-weight: 600;
     color: #0ef;
 }
 
-/* Headings */
-.timeline-content .content h6 {
-    font-size: 15px;
-    margin: 12px 0;
-    font-weight: 1000;
-}
-
-/* Paragraph */
-.timeline-content .content p {
+h6 {
     font-size: 16px;
-    color: #fcfcfc;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 14px;
     line-height: 1.6;
-    flex-grow: 1; /* Menjaga paragraf tetap berada di bawah heading */
 }
 
-/* Animasi masuk */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .timeline-row {
+        grid-template-columns: 1fr;
     }
 }
 
-
-/* Skills Section */
-#skills {
-    background-image: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 100px;
-    color: #ededed;
+@media (max-width: 768px) {
+    #timeline {
+        padding: 60px 5%;
+    }
+    .timeline-column {
+        padding: 15px;
+    }
+    p {
+        font-size: 13px;
+    }
 }
 
-#skills {
-    background-image: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 100px;
-    color: #ededed;
+@media (max-width: 480px) {
+    .timeline-content {
+        padding: 15px;
+    }
+    .title {
+        font-size: 20px;
+    }
+    h6 {
+        font-size: 14px;
+    }
+    .year {
+        font-size: 16px;
+    }
 }
 
+
+/* General Styles */
 #skills {
     text-align: center;
     padding: 50px 10%;
     color: #ededed;
-    margin-top: 0px;
-    background: linear-gradient(to right, rgba(31, 36, 45, 0), rgba(46, 53, 71, 0)), url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
+    background: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -523,20 +657,20 @@ header {
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     justify-items: center;
+    align-items: start;
 }
 
 .skills-category {
-    background: rgba(59, 70, 88, 0.5); /* Transparansi dengan warna latar belakang */
+    background: rgba(59, 70, 88, 0.5);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 238, 255, 0.2);
     transition: 0.3s;
     text-align: center;
-    height: 400px; /* Fixed height for each skill box */
-    border: 2px solid rgba(0, 238, 255, 0.3); /* Outline only inside the box */
+    border: 2px solid rgba(0, 238, 255, 0.3);
 }
 
 .skills-category:hover {
@@ -584,118 +718,81 @@ header {
     color: #d4d7dd;
 }
 
-@media (max-width: 768px) {
-    #skills {
-        text-align: center;
-        padding: 40px 10%;
-        background: #1f242d;
-        color: #ededed;
-        margin-top: 60px;
-    }
-    
-    .section-title {
-        font-size: 48px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        color: #0ef;
-        text-transform: uppercase;
-    }
-    
+/* Responsive Styles */
+@media (min-width: 1200px) {
     .skills-container {
-        display: grid;
-        grid-template-columns: none; /* Creates 3 equal-width columns */
-        gap: 20px;
-        justify-items: center;
-        outline: 2px solid #0ef; /* Menambahkan outline */
-    }
-    
-    .skills-category {
-        background: rgba(46, 53, 71, 0.8); /* Transparansi dengan warna latar belakang */
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 238, 255, 0.2);
-        transition: 0.3s;
-        text-align: center;
-        height: 400px; /* Fixed height for each skill box */
-        border: 2px solid rgba(0, 238, 255, 0.3); /* Outline only inside the box */
-    }
-
-    .skills-category:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0 15px rgba(0, 238, 255, 0.5);
-    }
-
-    .skills-category h3 {
-        font-size: 20px;
-        margin-bottom: 15px;
-        color: #0ef;
-        border-bottom: 2px solid #0ef;
-        display: inline-block;
-        padding-bottom: 5px;
-    }
-    
-    .skills-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-    
-    .skill {
-        text-align: center;
-        width: 80px;
-    }
-   
-    .skill img {
-        width: 48px;
-        height: 48px;
-        object-fit: contain;
-        filter: grayscale(40%);
-        padding: 0px;
-        gap: 5px;
-        transition: 0.3s;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #skills {
+        padding: 40px 5%;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section-title {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+    .skills-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .section-title {
+        font-size: 20px;
+    }
+}
+
 
 /* Projects Section */
-
-#projects {
-    background-image: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 100px;
-}
-
 #projects {
     text-align: center;
     padding: 60px 10%;
     color: #ededed;
-    margin-top: 0px;
+    background: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
+/* Project Container */
 .projects-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
-   
 }
 
+/* Project Box */
 .project {
-    background: rgba(0, 0, 0, 1); /* Background of the box */
+    background: rgba(0, 0, 0, 0.7); /* Transparan agar gambar tetap terlihat */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1); /* Background of the box */
-    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 238, 255, 0.3);
+    transition: 0.3s ease-in-out;
     text-align: center;
+    backdrop-filter: blur(5px); /* Efek blur untuk kesan modern */
 }
 
 .project:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(0, 238, 255, 10);
+    box-shadow: 0 0 20px rgba(0, 238, 255, 0.8);
 }
 
+/* Project Image */
 .project img {
     width: 100%;
     height: 250px;
@@ -703,16 +800,58 @@ header {
     border-radius: 5px;
 }
 
+/* Project Title */
 .project h3 {
-    font-size: 20px;
-    margin-top: 10px;
+    font-size: 22px;
+    margin-top: 15px;
     color: #0ef;
+    font-weight: bold;
 }
 
+/* Project Description */
 .project p {
     font-size: 16px;
-    margin-top: 5px;
+    margin-top: 8px;
     color: #d4d7dd;
+}
+
+/* 📌 RESPONSIVE DESIGN */
+
+/* Untuk layar besar (min-width: 1200px) */
+@media (min-width: 1200px) {
+    .projects-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Untuk desktop kecil & tablet (768px - 1023px) */
+@media (max-width: 1023px) {
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr); /* Jadi 2 kolom */
+    }
+}
+
+/* Untuk mobile (min-width: 320px - max-width: 480px & 375px - 812px) */
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr; /* 1 kolom */
+    }
+
+    .project {
+        padding: 15px;
+    }
+
+    .project img {
+        height: 200px; /* Ukuran lebih kecil agar lebih proporsional */
+    }
+
+    .project h3 {
+        font-size: 18px;
+    }
+
+    .project p {
+        font-size: 14px;
+    }
 }
 
 /* Certificates Section */
@@ -784,34 +923,85 @@ header {
 
 /* Footer */
 #footer {
-    background: rgba(59, 70, 88, 0);
+    background: rgba(0, 0, 0, 0.8); /* Background transparan tetap terlihat */
     color: #fff;
     text-align: center;
-    padding: 30px 0;
-    width: 100vw;
+    padding: 40px 10%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Memastikan konten ada di tengah */
+    justify-content: center;
 }
 
+/* Container Footer */
 .footer-container {
-    background: rgba(59, 70, 88, 0);
-    max-width: 50%;
+    max-width: 600px; /* Membatasi agar tidak terlalu melebar */
     margin: auto;
     padding: 20px;
+    text-align: center;
 }
 
+/* Footer */
+#footer {
+    background: rgba(0, 0, 0, 0.8); /* Background transparan tetap terlihat */
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Menjaga semua elemen tetap di tengah */
+    justify-content: center;
+}
+
+/* Container Footer */
+.footer-container {
+    width: 100%;
+    max-width: 600px; /* Membatasi agar tidak terlalu melebar */
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Judul Footer */
 #footer h2 {
     font-size: 28px;
     color: #0ef;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
+/* Alamat */
+.footer-address {
+    font-size: 16px;
+    color: #d4d7dd;
+    margin-top: 15px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icon lokasi sebelum alamat */
+.footer-address::before {
+    content: "📍";
+    margin-right: 5px;
+}
+
+/* Social Links */
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 40px;
     flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+    width: 100%;
 }
 
+/* Social Link Box */
 .social-link {
     display: flex;
     flex-direction: column;
@@ -845,3 +1035,45 @@ header {
     font-weight: bold;
 }
 
+/* 🛠 FIX: Mencegah Scroll Horizontal */
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* 📌 RESPONSIVE DESIGN */
+
+/* Layar besar (min-width: 1200px) */
+@media (min-width: 1200px) {
+    .footer-container {
+        max-width: 50%;
+    }
+}
+
+/* Desktop kecil & tablet (768px - 1023px) */
+@media (max-width: 1023px) {
+    .footer-container {
+        max-width: 60%;
+    }
+    .social-links {
+        gap: 20px;
+    }
+}
+
+/* Mobile (320px - 768px) */
+@media (max-width: 768px) {
+    .footer-container {
+        max-width: 80%;
+    }
+
+    .social-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+        gap: 15px;
+    }
+
+    .footer-address {
+        font-size: 14px;
+    }
+}
