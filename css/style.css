@@ -235,7 +235,7 @@ nav > .wrapper {
 
 /* Background Image */
 header {
-    background: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
+    background: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai\ \(1\).jpg');
     height: 100vh;
     background-position: center;
     background-size: cover;
@@ -375,7 +375,7 @@ header {
     align-items: center;
     min-height: 80vh;
     padding: 80px 10%;
-    background: linear-gradient(to right, rgba(31, 36, 45, 0.8), rgba(46, 53, 71, 0.8)), url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
+    background: linear-gradient(to right, rgba(31, 36, 45, 0.2), rgba(46, 53, 71, 0)), url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai\ \(1\).jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -391,7 +391,7 @@ header {
     width: 100%;
     gap: 40px;
     padding: 40px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     border: 2px solid #0ef;
     box-shadow: 0 4px 15px rgba(0, 238, 255, 0.4);
@@ -422,8 +422,8 @@ header {
     max-width: 600px;
 }
 
-.about-text h2 {
-    font-size: 32px;
+.about-text h9 {
+    font-size: 20px;
     font-weight: 800;
     color: #0ef;
     margin-bottom: 12px;
@@ -527,7 +527,7 @@ header {
 
 /* General Styling for Timeline Section */
 #timeline {
-    background-image: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
+    background-image: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai\ \(1\).jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -641,7 +641,7 @@ p {
     text-align: center;
     padding: 50px 10%;
     color: #ededed;
-    background: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
+    background: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai\ \(1\).jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -764,7 +764,7 @@ p {
     text-align: center;
     padding: 60px 10%;
     color: #ededed;
-    background: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg') no-repeat center center fixed;
+    background: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai\ \(1\).jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -856,7 +856,7 @@ p {
 
 /* Certificates Section */
 #certificates {
-    background-image: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
+    background-image: url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai\ \(1\).jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -864,7 +864,7 @@ p {
     text-align: center;
     color: #ededed;
     margin-top: 0px;
-    background: linear-gradient(to right, rgba(31, 36, 45, 0), rgba(46, 53, 71, 0)), url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai.jpg');
+    background: linear-gradient(to right, rgba(31, 36, 45, 0), rgba(46, 53, 71, 0)), url('../Images/glowing-sine-waves-create-futuristic-backdrop-design-generated-by-ai\ \(1\).jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
