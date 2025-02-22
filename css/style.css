@@ -19,7 +19,7 @@ html, body {
 /* Navbar */
 nav {
     background-color: #000;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
     width: 100%;
