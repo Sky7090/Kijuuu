@@ -783,7 +783,7 @@ p {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 238, 255, 0.3);
     transition: 0.3s ease-in-out;
-    text-align: center;
+    text-align: left;
     backdrop-filter: blur(5px); /* Efek blur untuk kesan modern */
 }
 
